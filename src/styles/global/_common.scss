@@ -1,0 +1,21 @@
+.wrapper {
+    min-height: 100%;
+}
+
+.main {
+    width: 100%;
+    flex: 1;
+}
+
+.form {
+    flex: 0;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 500;
+}
+
+html{
+font-size: 18px;
+}

@@ -1,0 +1,22 @@
+include ../mixins/btn
+
+section.banner
+    .banner__inner
+        .banner__compilation
+            h1.banner__compilation-title Подберём для Вас банк с лучшими условиями
+            h3.banner__compilation-subtitle Мы сотрудничаем со многими банками, поэтому сможем помочь Вам выгодно открыть расчётный счёт
+            .banner__banks
+                .banner__banks-sm
+                    .banner__banks-b1.banner__banks-sm-icon.--svg__bank_1
+                    .banner__banks-b2.banner__banks-sm-icon.--svg__bank_2
+                    .banner__banks-b3.banner__banks-sm-icon.--svg__bank_3
+                    .banner__banks-b4.banner__banks-sm-icon.--svg__bank_4
+                .banner__banks-bg
+                    .banner__banks-b5.banner__banks-bg-icon.--svg__bank_5
+                    .banner__banks-b6.banner__banks-bg-icon.--svg__bank_6
+                    .banner__banks-b7.banner__banks-bg-icon.--svg__bank_7
+        .banner__offer
+            h1.banner__offer-title 1 месяц обслуживания бесплатно!
+            .banner__offer-line
+            h2.banner__offer-subtitle при открытии фирмы с нами
+            +btn({add_class: "banner__btn"})

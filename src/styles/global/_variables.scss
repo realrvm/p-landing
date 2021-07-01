@@ -1,0 +1,34 @@
+$colors: (
+    "black": #000000,
+    "white": #ffffff,
+    "blue": #2f80ed,
+    "orange": #f2994a,
+    "gray": #4f4f4f,
+    "intense_blue": #1b57be,
+    "data_gray": #b6b6b6,
+);
+
+:root {
+    @each $key, $value in $colors {
+        --color-#{$key}: #{$value};
+    }
+}
+
+%banner_header {
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 44px;
+}
+
+%banner_text_style {
+    line-height: 25px;
+}
+
+%mb {
+    margin-bottom: 25px;
+    text-align: center;
+
+    @include media-tablet {
+        margin-bottom: 50px;
+    }
+}

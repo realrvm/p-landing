@@ -1,0 +1,11 @@
+- const unorderedListItems = [{color: "", content: "Грамотное составление трудовых договоров, а также различных инструкций для повышения эффективности работы сотрудников"}, {color: "", content: "Вопросы по увольнению и трудоустройству персонала"}, {color: "", content: "Ведение предусмотренной документации, заполнение трудовых книжек в соответствии с действующим трудовым законодательством"},{color: "", content: "Разработка и контроль за графиком отпусков персонала"},{color: "", content: "Разработка эффективного штатного расписания"},{color: "", content: "Разработка эффективного штатного расписания"},{color: "", content: "Полный или частичный бухгалтерский аутсорсинг"},{color: "", content: "Регистрация ООО под ключ"},{color: "#2F80ED", content: "Регистрация бизнеса (открытие ИП и создание ООО)"}]
+
+mixin unordered-list_item(color, content)
+    .unordered-list__item
+        .unordered-list__icon
+        span(style={color: color})= content
+
+.unordered-list
+    h3.unordered-list__title Специалисты аутсорсинговой компании «*» готовы взять на себя решение следующих задач:
+    each item in unorderedListItems
+        +unordered-list_item(item.color, item.content)

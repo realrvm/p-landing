@@ -1,0 +1,100 @@
+.form {
+    width: 100%;
+    margin: auto 0;
+    background: linear-gradient(rgba(79, 79, 79, 0.75), rgba(79, 79, 79, 0.75)), url(./assets//img/footer_bg.webp) no-repeat;
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        max-width: 1240px;
+        margin: 0 auto;
+        padding: 20px 10px 40px;
+
+        @include media-tablet {
+            padding: 50px 20px 90px;
+        }
+    }
+
+    &__title,
+    &__subtitle {
+        color: var(--color-white);
+        font-weight: 700;
+        text-align: center;
+    }
+
+    &__title {
+        font-size: 24px;
+
+        @include media-tablet {
+            font-size: 36px;
+        }
+    }
+
+    &__subtitle {
+        font-size: 18px;
+        margin-top: 15px;
+        margin-bottom: 20px;
+
+        @include media-tablet {
+            font-size: 24px;
+            margin-bottom: 40px;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+
+        @include media-tablet {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            grid-template-areas:
+                "name email"
+                "question question";
+        }
+
+        &-name,
+        &-email,
+        &-textarea {
+            align-self: center;
+            height: 48px;
+            padding: 14px 10px;
+            border-radius: 5px;
+            outline: none;
+            border: none;
+            &::placeholder {
+                opacity: 1;
+                color: #9f9f9f;
+            }
+
+            @include media-tablet {
+                height: 78px;
+                width: 100%;
+                padding: 28px 20px;
+                border-radius: 10px;
+            }
+        }
+
+        &-name {
+            grid-area: name;
+            max-width: 590px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        &-email {
+            grid-area: email;
+            max-width: 590px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        &-textarea {
+            width: 100%;
+            grid-area: question;
+            resize: none;
+            height: 120px;
+        }
+    }
+}

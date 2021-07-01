@@ -1,0 +1,18 @@
+include ../mixins/section-title
+
+- const servicesCards = [{img:"services1", title: "Бухгалтерские услуги", color: "#F2994A"},{img: "services2", title: "Кадровое делопроизводство", color: "#2F80ED"},{img: "services3", title: "Регистрационные услуги", color: "#4F4F4F "}]
+
+
+mixin service_card(img, title, svgColor)
+    .service__card-wrap
+        img.service__card-img(src=`./assets/img/content/${img}.webp` alt="")
+        .service__card-line(style={background: svgColor})
+        h3.service__card-subtitle= title
+        svg.arrow-down(width="24" height="15" viewBox="0 0 24 15" fill=svgColor xmlns="http://www.w3.org/2000/svg")
+            path(d="M10.7254 14.4893L0.528586 4.61929C-0.176193 3.9371 -0.176193 2.83399 0.528586 2.15905L2.22306 0.518897C2.92784 -0.163292 4.06748 -0.163292 4.76476 0.518897L12 7.50771L19.2277 0.51164C19.9325 -0.170549 21.0722 -0.170549 21.7694 0.51164L23.4714 2.15179C24.1762 2.83398 24.1762 3.9371 23.4714 4.61203L13.2746 14.482C12.5698 15.1715 11.4302 15.1715 10.7254 14.4893V14.4893Z" )
+
+section.services
+    +section_title("Наши услуги")
+    .services__inner
+        each card in servicesCards
+            +service_card(card.img, card.title, card.color)

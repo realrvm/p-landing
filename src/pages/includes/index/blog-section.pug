@@ -1,0 +1,18 @@
+include ../mixins/section-title
+include ../mixins/btn
+
+- const blogCards = [{img:"blog1", date: "02.03.2021", title: "Какую систему налогообложения выбрать в 2021 году"},{img: "blog2", date: "29.12.2020", title: "Поздравляем с Новым 2021 годом!"}, {img: "blog3", date: "21.12.2020", title: "Преимущества бухгалтерского аутсорсинга"}]
+
+mixin blog_card(img, date, title )
+    .blog__card-wrap
+        .blog__card-img-wrap
+            img.blog__card-img(src=`./assets/img/content/${img}.webp` alt="")
+        p.blog__card-data=date
+        h3.blog__card-subtitle=title
+
+.blog
+    +section_title("Блог")
+    .blog__inner
+            each card in blogCards
+                +blog_card(card.img, card.date, card.title)
+    +btn

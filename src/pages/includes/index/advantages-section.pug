@@ -1,0 +1,16 @@
+include ../mixins/section-title
+
+- const advantagesCards = [{img: "advantages-1", title: "Квалифицированные специалисты"},{img: "advantages-2", title: "Круглосуточная онлайн поддержка"}, {img: "advantages-3", title: "Экономия вашего времени"}, {img: "advantages-4", title: "Оптимизация расходов"}, {img: "advantages-5", title: "Сдача отчетности во время"}, {img: "advantages-6", title: "Личный контакт со специалистом"}]
+
+mixin advantage_card(img, title)
+    .advantage__card-wrap
+        .advantage__card-img(class=`--svg__${img}`)
+        p.advantage__card-title= title
+
+
+section.advantages
+    +section_title("Наши преимущества")
+    .advantages__inner
+        each card in advantagesCards
+            +advantage_card(card.img, card.title)
+        p.advantages__descr Если вы заключаете договор с нами, то вам уже не нужно переживать по поводу компетенций специалистов ООО «*». Вы оплачивайте только фактически выполненные задачи. Весь фронт работ, которые мы закрываем в рамках месяца, вы сможете увидеть в подробном отчёте. Мы постоянно вкладываем время и деньги в образование наших сотрудников.

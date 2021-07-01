@@ -1,0 +1,193 @@
+.banner {
+    width: 100%;
+    background: url("./assets/img/banner-narrow.webp") center no-repeat;
+    background-size: cover;
+
+    &__inner {
+        @include container;
+        display: flex;
+        flex-direction: column;
+        padding: 30px 0;
+    }
+
+    &__compilation {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &-title {
+            text-align: center;
+            color: var(--color-white);
+            font-weight: 800;
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        &-subtitle {
+            text-align: center;
+            color: var(--color-white);
+            font-weight: 400px;
+            font-size: 12px;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__banks {
+        display: none;
+
+        &-sm-icon {
+            width: 82px;
+            height: 82px;
+            @include bg;
+        }
+
+        &-bg-icon {
+            width: 184px;
+            height: 50px;
+            @include bg;
+        }
+    }
+
+    &__offer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        &-title {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 800;
+            color: var(--color-white);
+        }
+
+        &-line {
+            display: none;
+        }
+
+        &-subtitle {
+            text-align: center;
+            font-size: 12px;
+            color: var(--color-white);
+            margin-bottom: 20px;
+        }
+    }
+
+    @include media-tablet {
+        &__inner {
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        &__compilation {
+            width: 50%;
+
+            &-title {
+                font-size: 32px;
+                margin-bottom: 20px;
+            }
+            &-subtitle {
+                font-size: 18px;
+            }
+        }
+
+        &__offer {
+            width: 45%;
+
+            &-title {
+                font-size: 28px;
+            }
+
+            &-subtitle {
+                font-size: 20px;
+            }
+        }
+    }
+
+    &__btn {
+        align-self: center;
+    }
+
+    @include media-desktop {
+        &__inner {
+            justify-content: space-between;
+            padding: 0;
+        }
+
+        &__compilation {
+            width: 489px;
+            align-items: center;
+            padding: 45px 30px;
+        }
+
+        &__banks {
+            display: flex;
+            &-sm {
+                display: grid;
+                gap: 21px;
+                grid-template-columns: 1fr 1fr;
+                grid-template-areas:
+                    "b1 b3 "
+                    "b2 b4 ";
+            }
+
+            &-bg {
+                display: flex;
+                flex-direction: column;
+                margin-left: 20px;
+            }
+
+            &-b1 {
+                grid-area: b1;
+            }
+
+            &-b2 {
+                grid-area: b2;
+            }
+
+            &-b3 {
+                grid-area: b3;
+            }
+
+            &-b4 {
+                grid-area: b4;
+            }
+
+            &-b5,
+            &-b6 {
+                margin-bottom: 17px;
+            }
+        }
+
+        &__offer {
+            width: 450px;
+            padding-top: 30px;
+
+            &-title {
+                text-align: left;
+                font-size: 32px;
+                z-index: 5;
+            }
+
+            &-line {
+                display: block;
+                width: 191px;
+                height: 8px;
+                background: var(--color-orange);
+                transform: translateY(-18px);
+            }
+
+            &-subtitle {
+                font-size: 24px;
+                text-align: left;
+            }
+        }
+
+        &__btn {
+            align-self: flex-start;
+        }
+    }
+
+    @include media-custom(1130px) {
+        background: url("./assets/img/banner-wide.webp") center no-repeat;
+    }
+}

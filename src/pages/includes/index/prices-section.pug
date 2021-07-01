@@ -1,0 +1,21 @@
+include ../mixins/section-title
+include ../mixins/btn
+
+- const pricesCards = [{title: "Бухгалтерское сопровождение", price: 600, color: "#F2994A", bg: "price_1"}, {title:"Кадровый учет", price: 600, color: "#2F80ED", bg: "price_2"}, {title: "Регистрационные услуги", price: 600, color: "#4F4F4F ", bg: "price_3"}]
+
+mixin price_card(title, price, color, bg)
+    .prices__card(class=`--svg__${bg}`)
+        .prices__card-inner
+            .prices__card-title-wrap
+                h3.prices__card-title= title
+            .prices__card-descr
+                p.prices__card-descr-up от
+                h4.prices__card-descr-number(style={color: color})= price
+                p.prices__card-descr-down руб./месяц
+            +btn({color})
+
+section.prices
+    +section_title("Тарифы")
+    .prices__inner
+        each card in pricesCards
+            +price_card(card.title, card.price, card.color, card.bg)
